@@ -21,3 +21,7 @@ while True:
     sock.sendall(messaggio.encode("UTF-8"))
     data = sock.recv(BUFFER_SIZE)
     print("Risultato:", data.decode())
+    risp=input("se non vuoi fare altre operazioni digita 'n'==no ")
+    if(risp=='n'):
+        print("chiusura della connessione col server")
+        break
