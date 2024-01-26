@@ -25,11 +25,13 @@ def genera_richieste(SERVER_ADDRESS, SERVER_PORT):
     messaggio={'primoNumero':primoNumero,
                'operazione':operazione,
                'secondoNumero':secondoNumero}
-    print(messaggio)
+    
     messaggio=json.dumps(messaggio)
     s.sendall(messaggio.encode("UTF-8"))
     data=s.recv(1024)
-    print(f"\n{threading.current_thread().name} ---- risultato: ", data.decode())
+    
+    print(f"\n {threading.current_thread().name} ",messaggio)
+    print(f"\n {threading.current_thread().name}risultato: ", data.decode())
 
     #s.close()
     end_time_thread=time.time()
